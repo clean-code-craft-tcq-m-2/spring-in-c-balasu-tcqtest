@@ -37,11 +37,11 @@ Stats compute_statistics(const float* numberset, int setlength) {
     return s;
 }
 
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], Stats computedStats)
-{
-    if(computedStats.max > maxThreshold)
-    {
+// void check_and_alert(float maxThreshold, alerter_funcptr alerters[], Stats computedStats)
+// {
+//     if(computedStats.max > maxThreshold)
+//     {
         
-    }
-}
+//     }
+// }
         
