@@ -13,7 +13,8 @@ Stats compute_statistics(const float* numberset, int setlength) {
     float sum = 0.0;
     int tempLen = 1;
     
-    tempMin = tempMax = numberset[0];
+    tempMin = numberset[0];
+    tempMax = numberset[0];
     sum += numberset[0];
     while(tempLen < setlength)
     {
