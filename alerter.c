@@ -1,5 +1,5 @@
 #include "alerter.h"
-#inlcude "stats.h"
+#include "stats.h"
 
 void emailAlerter(void)
 {
