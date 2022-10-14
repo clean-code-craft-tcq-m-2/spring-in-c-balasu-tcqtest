@@ -1,4 +1,4 @@
-#include "aleter.h"
+#include "alerter.h"
 #inlcude "stats.h"
 
 void emailAlerter(void)
