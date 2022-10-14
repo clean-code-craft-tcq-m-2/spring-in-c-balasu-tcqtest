@@ -42,7 +42,7 @@ void check_and_alert(float maxThreshold, alerter_funcptr alerters[], int alertCo
     
     if(computedStats.max > maxThreshold)
     {
-        while(tempCnt < alerterCount)
+        while(tempCnt < alertCount)
         {
             if(alerters[tempCnt] != (void *)0)
             {
