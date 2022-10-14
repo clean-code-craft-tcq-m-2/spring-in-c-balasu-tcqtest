@@ -11,11 +11,11 @@ Stats compute_statistics(const float* numberset, int setlength) {
     float tempMin = 0.0;
     float tempMax = 0.0;
     float sum = 0.0;
-    int tempLen = 1;
+    int tempLen = 0;
     
     tempMin = numberset[0];
     tempMax = numberset[0];
-    sum += numberset[0];
+    
     while(tempLen < setlength)
     {
         if( tempMax < numberset[tempLen])
@@ -32,7 +32,7 @@ Stats compute_statistics(const float* numberset, int setlength) {
     s.min = tempMin;
     s.max = tempMax;
     s.average = sum / setlength;
-    
+    printf("Min:%f,Max:%f,Avg:%f\n",s.min,s.max,s.average);
     return s;
 }
 
