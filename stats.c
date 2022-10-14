@@ -11,21 +11,19 @@ Stats compute_statistics(const float* numberset, int setlength) {
     float tempMin = 0.0;
     float tempMax = 0.0;
     float sum = 0.0;
-    int tempLen = 0;
+    int tempLen = 1;
     
+    tempMin = tempMax = numberset[0];
+    sum += numberset[0];
     while(tempLen < setlength)
     {
-        if( numberset[tempLen]  > tempMax)
+        if( tempMax < numberset[tempLen])
         {
             tempMax = numberset[tempLen];
         }
-        else if( numberset[tempLen] < tempMin)
+        if( tempMin > numberset[tempLen])
         {
             tempMin = numberset[tempLen];
-        }
-        else
-        {
-            // Do nothing
         }
         sum += numberset[tempLen];
         tempLen++;
