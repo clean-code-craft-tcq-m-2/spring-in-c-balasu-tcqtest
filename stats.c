@@ -32,15 +32,24 @@ Stats compute_statistics(const float* numberset, int setlength) {
     s.min = tempMin;
     s.max = tempMax;
     s.average = sum / setlength;
-    printf("Min:%f,Max:%f,Avg:%f\n",s.min,s.max,s.average);
+    
     return s;
 }
 
-// void check_and_alert(float maxThreshold, alerter_funcptr alerters[], Stats computedStats)
-// {
-//     if(computedStats.max > maxThreshold)
-//     {
-        
-//     }
-// }
+void check_and_alert(float maxThreshold, alerter_funcptr alerters[], , Stats computedStats)
+{
+    int tempCnt = 0;
+    int alerterCount = sizeof(alerters);
+    
+    if(computedStats.max > maxThreshold)
+    {
+        while(tempCnt < alerterCount)
+        {
+            if(alerters[counter] != (void *)0)
+            {
+                alerters[counter]();
+            }
+            tempCnt++;
+    }
+}
         
