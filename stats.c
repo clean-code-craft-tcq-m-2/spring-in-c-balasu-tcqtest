@@ -13,25 +13,34 @@ Stats compute_statistics(const float* numberset, int setlength) {
     float sum = 0.0;
     int tempLen = 0;
     
-    tempMin = numberset[0];
-    tempMax = numberset[0];
-    
-    while(tempLen < setlength)
+    if((numberset != (void *)0) || (setlength > 0))
     {
-        if( tempMax < numberset[tempLen])
+        tempMin = numberset[0];
+        tempMax = numberset[0];
+
+        while(tempLen < setlength)
         {
-            tempMax = numberset[tempLen];
+            if( tempMax < numberset[tempLen])
+            {
+                tempMax = numberset[tempLen];
+            }
+            if( tempMin > numberset[tempLen])
+            {
+                tempMin = numberset[tempLen];
+            }
+            sum += numberset[tempLen];
+            tempLen++;
         }
-        if( tempMin > numberset[tempLen])
-        {
-            tempMin = numberset[tempLen];
-        }
-        sum += numberset[tempLen];
-        tempLen++;
+        s.min = tempMin;
+        s.max = tempMax;
+        s.average = sum / setlength;
     }
-    s.min = tempMin;
-    s.max = tempMax;
-    s.average = sum / setlength;
+    else
+    {
+        s.average = NAN;
+        s.min = NAN;
+        s.max = NAN;
+    }
     
     return s;
 }
